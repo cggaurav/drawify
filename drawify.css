@@ -1,9 +1,15 @@
 /* CSS declarations go here */
 h1 {
-  display: inline-block;
+	text-align: center;
 }
 .clearButton {
-  position: relative;
-  margin-left: 5em;
-  top: -0.3em;
+  position: fixed;
+  float:left;
+  bottom: 3%;
+}
+
+#canvas{
+	border-radius: 15px;
+	border-style: solid;
+	border-width: 2px;
 }

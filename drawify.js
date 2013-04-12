@@ -91,9 +91,10 @@ Canvas = function () {
 
   var createSvg = function() {
     svg = d3.select('#canvas').append('svg')
-      .attr('width', '100%')
-      .attr('height', '100%');
+      .attr('width', '95%')
+      .attr('height', '95%');
   };
+
   createSvg();
 
   self.clear = function() {
@@ -109,7 +110,7 @@ Canvas = function () {
     if (svg) {
       svg.selectAll('circle').data(data, function(d) { return d._id; })
       .enter().append('circle')
-      .attr('r', 10)
+      .attr('r', 2)
       .attr('cx', function (d) { return d.x; })
       .attr('cy', function (d) { return d.y; });
     }
