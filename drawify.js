@@ -42,16 +42,17 @@ if (Meteor.isClient) {
     }
   })
 
-  var markPoint = function() {
+  var markPoint = function(e) {
     var offset = $('#canvas').offset();
-        Points.insert({
-        x: (event.pageX - offset.left),
-        y: (event.pageY - offset.top)});
+    Points.insert({
+      x: (e.pageX - offset.left),
+      y: (e.pageY - offset.top)}
+    );
   }
 
   Template.canvas.events({
     'click': function (event) {
-      markPoint();
+      markPoint(event);
     },
     'mousedown': function (event) {
       Session.set('draw', true);
@@ -61,7 +62,7 @@ if (Meteor.isClient) {
     },
     'mousemove': function (event) {
       if (Session.get('draw')) {
-        markPoint();
+        markPoint(event);
       }
     }
   });
